@@ -1,5 +1,11 @@
 <% if current_user %>
-<h1>Everything will be all right in the end. If everything is not yet all right, it is not yet the end</h1>
+  <% if current_message %>
+    <h1><%= current_message %></h1>
+    <a href="/message/dismiss">Dismiss</a>
+  <% else %>
+    <br/>
+    Sign out and back in to view an inspirational message
+  <% end %>
 <% else %>
-<h1>Sign in to see an inspirational message</h1>
+  <h1>Sign in to see an inspirational message</h1>
 <% end %>

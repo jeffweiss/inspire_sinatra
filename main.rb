@@ -52,7 +52,15 @@ def current_user
 end
 
 def current_message
-  Message.find(current_user.message_id)
+  if session[:suppress_message]
+    nil
+  else
+    if msg = Message.find(:id => current_user.current_message_id)
+      msg.message
+    else
+      "We've run out of inspiration"
+    end
+  end
 end
 
 %w(get post).each do |method|
@@ -73,4 +81,10 @@ end
 
 get '/' do
   erb :message
+end
+
+get '/message/dismiss' do
+  session[:suppress_message] = true
+  location = env['HTTP_REFERER'] || '/'
+  redirect location
 end
