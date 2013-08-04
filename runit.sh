@@ -1,0 +1,2 @@
+#!/bin/bash
+TWITTER_CONSUMER_KEY=FEL86ay16Pv4nggRMUSw TWITTER_CONSUMER_SECRET=pVTzG8ovMZOlBLpQ74uZDlL0Zoi6cWJvbFgmkoDd9s bundle exec ruby main.rb
