@@ -1,0 +1,7 @@
+<% if current_user %>
+  Signed in as <a href="http://twitter.com/<%= current_user.twitter_id %>"><%= current_user.name %></a> | 
+  <a href="/logout">Sign out</a>
+<% else %>
+  <a href="/auth/twitter">Sign in with Twitter</a>
+
+<% end %>
