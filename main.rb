@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'omniauth'
 require 'omniauth-twitter'
-require 'twitter'
 
 enable :sessions
 
