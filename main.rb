@@ -51,6 +51,10 @@ def current_user
   @current_user ||= User.find(:id => session[:user_id]) if session[:user_id]
 end
 
+def current_message
+  Message.find(current_user.message_id)
+end
+
 %w(get post).each do |method|
   send(method, "/auth/:provider/callback") do
     auth = env['omniauth.auth'] # => OmniAuth::AuthHash
