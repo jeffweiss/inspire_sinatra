@@ -58,3 +58,10 @@ end
     redirect location
   end
 end
+
+get '/logout' do
+  session.clear
+  location = env['HTTP_REFERER'] || '/'
+  redirect location
+end
+
