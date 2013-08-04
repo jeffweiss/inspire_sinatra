@@ -25,6 +25,9 @@ configure do
   Sequel.extension :migration
   Sequel::Migrator.run(DB, 'db/migrations')
   Sequel::Model.plugin :timestamps, :update_on_create => true
+
+  require File.join(File.dirname(__FILE__), 'lib/user')
+  require File.join(File.dirname(__FILE__), 'lib/message')
 end
 
 def find_user(handle)
