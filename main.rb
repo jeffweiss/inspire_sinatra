@@ -64,3 +64,6 @@ get '/logout' do
   redirect location
 end
 
+get '/' do
+  erb :message
+end
