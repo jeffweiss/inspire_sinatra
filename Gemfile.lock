@@ -29,6 +29,7 @@ GEM
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
     tilt (1.4.1)
+    tzinfo (1.0.1)
 
 PLATFORMS
   ruby
@@ -40,3 +41,4 @@ DEPENDENCIES
   sinatra
   sqlite3
   thin
+  tzinfo
