@@ -86,5 +86,7 @@ end
 get '/message/dismiss' do
   session[:suppress_message] = true
   location = env['HTTP_REFERER'] || '/'
+  current_user.current_message_id += 1
+  current_user.save
   redirect location
 end
